@@ -24,9 +24,10 @@ preprocess_fixture <- function(fixture) {
     fixture_clean$date <- as.Date(fixture_clean$localtime)
     fixture_clean$time <- format(ymd_hms(fixture_clean$localtime), "%H:%M:%S")
     fixture_clean$home_win <- ifelse(fixture_clean$hscore > fixture_clean$ascore, 1, 0) 
+    fixture_clean$hdiff <- fixture_clean$hscore - fixture_clean$ascore
     
     # select specific rows
-    fixture_clean <- select(fixture_clean, year, round, date, time, region, venue, hteam, ateam, hscore, ascore, home_win)
+    fixture_clean <- select(fixture_clean, year, round, date, time, region, venue, hteam, ateam, hscore, ascore, home_win, hdiff)
     
     return(fixture_clean)
 }
