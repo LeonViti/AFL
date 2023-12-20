@@ -23,9 +23,10 @@ preprocess_fixture <- function(fixture) {
     
     fixture_clean$date <- as.Date(fixture_clean$localtime)
     fixture_clean$time <- format(ymd_hms(fixture_clean$localtime), "%H:%M:%S")
+    fixture_clean$home_win <- ifelse(fixture_clean$hscore > fixture_clean$ascore, 1, 0) 
     
     # select specific rows
-    fixture_clean <- select(fixture_clean, year, round, date, time, region, venue, hteam, ateam, hscore, ascore)
+    fixture_clean <- select(fixture_clean, year, round, date, time, region, venue, hteam, ateam, hscore, ascore, home_win)
     
     return(fixture_clean)
 }
@@ -44,7 +45,7 @@ fixture_22 <- fetch_fixture_squiggle(2022)
 fixture_23 <- fetch_fixture_squiggle(2023)
 
 fixture = rbind(fixture_17, fixture_18, fixture_19, fixture_20, fixture_21, fixture_22, fixture_23)
-fixture$home_win <- ifelse(fixture$hscore > fixture$ascore, 1, 0) 
+
 fixture = preprocess_fixture(fixture)
 
 write.csv(fixture, file='fixture.csv', row.names=FALSE)
