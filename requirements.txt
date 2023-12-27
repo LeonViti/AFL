@@ -1,0 +1,11 @@
+scikit-learn
+transformers
+gym
+ipywidgets
+plotly
+matplotlib
+optuna
+optuna-integration
+optuna-dashboard
+pandas
+numpy
