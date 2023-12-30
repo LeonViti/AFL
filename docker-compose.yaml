@@ -1,4 +1,3 @@
-# Run on afl_jupyter-lab:latest
 services:
   jupyter-lab:
     ports:
