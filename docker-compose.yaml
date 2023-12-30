@@ -1,6 +1,6 @@
+# Run on afl_jupyter-lab:latest
 services:
   jupyter-lab:
-    build: .
     ports:
       - "8888:8888"
       - "8080:8080"
@@ -17,3 +17,4 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+    image: afl_jupyter-lab:latest
