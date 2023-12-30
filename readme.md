@@ -26,7 +26,7 @@ You have two options to get the Docker image for this project:
 ```
 2. **Pull the Docker image from GitHub Container Registry:**
 ```sh
-docker pull ghcr.io/<OWNER>/<REPO>/afl-stats:latest
+docker pull ghcr.io/DanJarAka/AFL/afl-stats:latest
 ```
 
 After creating the image run the Docker Compose application:
