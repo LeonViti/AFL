@@ -16,6 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ vars.IMAGE_NAME }}:$(date +%s)
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME:$(date +%s)
       env:
-        IMAGE_NAME: ${{ vars.IMAGE_NAME }}
+        IMAGE_NAME: afl-stats
