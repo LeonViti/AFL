@@ -9,3 +9,4 @@ optuna-integration
 optuna-dashboard
 pandas
 numpy
+jupyterlab==3.6.5
