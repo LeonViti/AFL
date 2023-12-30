@@ -6,9 +6,8 @@ RUN apt-get update && apt-get install -y git
 
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
-RUN pip install --upgrade -r requirements.txt
 RUN pip uninstall -y jupyterlab && \
-    pip install jupyterlab==3.6.5
+    pip install --upgrade -r requirements.txt
 
 # install R
 RUN apt-get update && apt-get install -y r-base 
